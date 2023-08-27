@@ -8,9 +8,12 @@ const ProductCard = ({ product }) => {
     readOnly: true,
     precision: 0.5,
   };
+
+  console.log(product)
+
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
-      <img src={product.images[0].url} alt={product.name} />
+      { product.images.length && <img src={product.images[0].url} alt={product.name} /> }
       <p>{product.name}</p>
       <div>
         <Rating {...options} />{" "}
