@@ -55,6 +55,7 @@ const Payment = ({ history }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials : true
       };
       const { data } = await axios.post(
         "/api/v1/payment/process",
